@@ -20,7 +20,8 @@ class CodeGenerator(object):
     if (node['type'] != 'ExpressionStatement' and
         node['type'] != 'CallExpression' and
         node['type'] != 'Identifier' and
-        node['type'] != 'NumberLiteral'):
+        node['type'] != 'NumberLiteral' and
+        node['type'] != 'StringLiteral'):
 
       raise ValueError("Unknown node type %s" % node['type'])
 
@@ -38,6 +39,9 @@ class CodeGenerator(object):
 
     if node['type'] == 'NumberLiteral':
       return node['value']
+
+    if node['type'] == 'StringLiteral':
+      return '"'+ node['value'] + '"'
 
   def run(self):
     return self.translate(self.ast)

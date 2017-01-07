@@ -44,7 +44,11 @@ class Traverser(object):
       pass
 
     # freak out here
-    if node['type'] != 'Program' and node['type'] != 'CallExpression' and node['type'] != 'NumberLiteral':
+    if (node['type'] != 'Program' and
+        node['type'] != 'CallExpression' and
+        node['type'] != 'NumberLiteral' and
+        node['type'] != 'StringLiteral'):
+
       raise ValueError("Unknown node type %s" % node['type'])
 
     if node['type'] == 'Program':
@@ -84,6 +88,13 @@ class Visitor(object):
   def numberliteral(node, parent):
     parent['_context'].append({
       'type': 'NumberLiteral',
+      'value': node['value']
+    })
+
+  @staticmethod
+  def stringliteral(node, parent):
+    parent['_context'].append({
+      'type': 'StringLiteral',
       'value': node['value']
     })
 

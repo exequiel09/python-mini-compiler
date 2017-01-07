@@ -36,6 +36,15 @@ class Parser(object):
         'value': token['value']
       }
 
+    # if the token type is a string, mark it as a StringLiteral
+    if token['type'] == 'name':
+      self.current += 1
+
+      return {
+        'type': 'StringLiteral',
+        'value': token['value']
+      }
+
     # mark the text after the open parenthesis as a 'CallExpression'
     if token['type'] == 'paren' and token['value'] == '(':
       token = self.get_next_token()
