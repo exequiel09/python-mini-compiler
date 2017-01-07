@@ -4,7 +4,7 @@
 #
 # Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09@gmail.com>
 # Licensed under MIT
-# Version 1.0.0-alpha1
+# Version 1.0.0-alpha2
 
 from compiler import Compiler
 

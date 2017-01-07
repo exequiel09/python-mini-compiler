@@ -2,7 +2,7 @@
 #
 # Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09gmail.com>
 # Licensed under MIT
-# Version 1.0.0-alpha1
+# Version 1.0.0-alpha2
 
 class CodeGenerator(object):
   """ Class that generates Python Code based on the transformer-generated AST """
