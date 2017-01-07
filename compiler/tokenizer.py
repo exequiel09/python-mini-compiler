@@ -10,6 +10,7 @@ import re
 NUMBERS = re.compile('[0-9]') # numbers
 LETTERS = re.compile('[a-zA-Z]') # name
 WHITESPACE = re.compile(r'\s')
+QUOTES = re.compile(r'\"')
 
 class Tokenizer(object):
   """ Class that generates tokens for the compiler """
@@ -61,6 +62,38 @@ class Tokenizer(object):
           'type': 'number',
           'value': value
         })
+
+        continue
+
+      # check quoted strings
+      if QUOTES.match(char):
+        value = ""
+
+        # increment the counter
+        self.current += 1
+
+        # get the next character
+        char = separated[self.current]
+
+        # loop until the next character is a number, letter or space
+        while LETTERS.match(char) or NUMBERS.match(char) or WHITESPACE.match(char):
+          # append the character to the value
+          value += char
+
+          # increment the counter
+          self.current += 1
+
+          # get the next character
+          char = separated[self.current]
+
+        # finally, append the token to the list
+        self.tokens.append({
+          'type': 'name',
+          'value': value
+        })
+
+        # increment the counter to skip the closing quote
+        self.current += 1
 
         continue
 
