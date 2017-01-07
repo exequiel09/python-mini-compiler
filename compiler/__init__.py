@@ -2,7 +2,7 @@
 #
 # Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09gmail.com>
 # Licensed under MIT
-# Version 0.0.0
+# Version 1.0.0-alpha1
 
 from compiler.tokenizer import Tokenizer
 from compiler.parser import Parser

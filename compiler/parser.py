@@ -1,8 +1,8 @@
 # parser.py
 #
-# Copyright(c) Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
+# Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09gmail.com>
 # Licensed under MIT
-# Version 0.0.0
+# Version 1.0.0-alpha1
 
 class Parser(object):
   """ Class that generates ASTs for the given set of tokens """
