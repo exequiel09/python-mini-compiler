@@ -10,6 +10,7 @@ import pprint
 from compiler.tokenizer import Tokenizer
 from compiler.parser import Parser
 from compiler.transformer import Transformer
+from compiler.code_generator import CodeGenerator
 
 if __name__ == "__main__":
   # setup the pretty printer
@@ -20,13 +21,16 @@ if __name__ == "__main__":
   parser = Parser(tknizer.run())
   ast = parser.run()
 
-  print('Original AST:')
-  pp.pprint(ast)
+  # print('Original AST:')
+  # pp.pprint(ast)
 
   transformer = Transformer(ast)
   new_ast = transformer.run()
 
-  print('Transformed AST:')
-  pp.pprint(new_ast)
+  # print('Transformed AST:')
+  # pp.pprint(new_ast)
+
+  code_generator = CodeGenerator(new_ast)
+  print(code_generator.run())
 
 
