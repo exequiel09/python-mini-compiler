@@ -1,5 +1,7 @@
 # Python Mini Compiler
 
+This compiler project is based on the James Kyle's [the-super-tiny-compiler](https://github.com/thejameskyle/the-super-tiny-compiler) but written in Python.
+
 ## Installation of Requirements
 
 ### All Operating Systems
@@ -15,7 +17,6 @@
 
 1. Setup `virtualenv` for the project: `virtualenv venv`. Make sure this is executed inside the project root folder.
 2. Activate `virtualenv` by running: `source venv/bin/activate`
-3. Install application requirements via:`pip install -r requirements.txt`. This will install all required dependencies of the application.
-4. Run the app by running the command: `python run.py`
+3. Run the app by running the command: `python run.py`
 
 
