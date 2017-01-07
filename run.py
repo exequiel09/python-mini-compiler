@@ -9,7 +9,11 @@
 from compiler import Compiler
 
 if __name__ == "__main__":
-  compiler = Compiler("(add 23 (subtract 4 2))")
-  print(compiler.compile())
+  code = "(list 1 2 (quote foo))"
+
+  compiler = Compiler(code)
+
+  print("LISP input code: %s" % code)
+  print("Generated Python Code: %s" % compiler.compile())
 
 
