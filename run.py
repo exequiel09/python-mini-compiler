@@ -9,15 +9,24 @@
 import pprint
 from compiler.tokenizer import Tokenizer
 from compiler.parser import Parser
+from compiler.transformer import Transformer
 
 if __name__ == "__main__":
-  tknizer = Tokenizer("(add 23 (subtract 4 2))")
-  parser = Parser(tknizer.run())
-
   # setup the pretty printer
   pp = pprint.PrettyPrinter(indent=2)
 
-  # print the ast
-  pp.pprint(parser.run())
+  tknizer = Tokenizer("(add 23 (subtract 4 2))")
+
+  parser = Parser(tknizer.run())
+  ast = parser.run()
+
+  print('Original AST:')
+  pp.pprint(ast)
+
+  transformer = Transformer(ast)
+  new_ast = transformer.run()
+
+  print('Transformed AST:')
+  pp.pprint(new_ast)
 
 
