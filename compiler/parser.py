@@ -2,7 +2,7 @@
 #
 # Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09gmail.com>
 # Licensed under MIT
-# Version 1.0.0-alpha1
+# Version 1.0.0-alpha2
 
 class Parser(object):
   """ Class that generates ASTs for the given set of tokens """
