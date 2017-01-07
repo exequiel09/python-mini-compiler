@@ -2,7 +2,7 @@
 #
 # Copyright(c) Exequiel Ceasar Navarrete <exequiel.navarrete09gmail.com>
 # Licensed under MIT
-# Version 1.0.0-alpha1
+# Version 1.0.0-alpha2
 
 class Transformer(object):
   """ Transforms AST into a more verbose AST """
