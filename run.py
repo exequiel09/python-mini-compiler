@@ -6,10 +6,18 @@
 # Licensed under MIT
 # Version 0.0.0
 
+import pprint
 from compiler.tokenizer import Tokenizer
+from compiler.parser import Parser
 
 if __name__ == "__main__":
   tknizer = Tokenizer("(add 23 (subtract 4 2))")
-  print(tknizer.run())
+  parser = Parser(tknizer.run())
+
+  # setup the pretty printer
+  pp = pprint.PrettyPrinter(indent=2)
+
+  # print the ast
+  pp.pprint(parser.run())
 
 
