@@ -16,7 +16,7 @@ class Compiler(object):
     self.input_code = input_code
 
   def compile(self):
-    tknizer = Tokenizer("(add 23 (subtract 4 2))")
+    tknizer = Tokenizer(self.input_code)
     parser = Parser(tknizer.run())
     transformer = Transformer(parser.run())
     code_generator = CodeGenerator(transformer.run())
